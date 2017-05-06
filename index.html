@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Odev</title>
+        <script type="text/javascript" src="js/phaser.min.js"></script>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/stil.css" />
+    </head>
+    <body>
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <div class="container" id="KullaniciAdiBolge">
+            <input type="text" id="KullaniciAdi" class="form-control" placeholder="Kullanici Adi.."></input>
+            <center><button id="kullaniciAdiGiris" onclick="gir()" class="GirisButonu form-control usttenBosluk btn btn-primary">Giris Yap</button></center>
+        </div>
+        <div class="container" id="oyun">
+            <input type="text" id="Oda_giris_isim" class="form-control" placeholder="Oda ismi.."></input>
+            <center><button id="OdayaGiris" onclick="OdayaGir()" class="GirisButonu form-control usttenBosluk btn btn-primary">Odaya Katıl </button></center>
+
+        </div>
+        <div class="container" id="oyuncu">
+            <input type="text" id="kacinci_oyuncu" class="form-control" placeholder="Kacinci Oyuncusun?"></input>
+            <center><button id="OdayaGiris" onclick="OyunaGir()" class="GirisButonu form-control usttenBosluk btn btn-primary">Odaya Katıl </button></center>
+        </div>
+        <div class="container" id="bekleme">
+            <center>Oyuncu Bekleniyor..</center>
+        </div>
+
+        <script>
+            $(function(){
+                $('#oyun').hide();
+                $('#oyuncu').hide();
+                $('#bekleme').hide();
+                $('#ModalAc').hide();
+            });
+            var aKullaniciAdi;
+            var socket=io();
+            var OyuncuSayisi;
+            function gir(){
+                aKullaniciAdi=$('#KullaniciAdi').val();
+                $('#KullaniciAdiBolge').hide();
+                $('#oyun').show();
+            }
+            var oda_ismi=undefined;
+            function OdayaGir(){
+                socket.emit('OdayaGiris',$('#Oda_giris_isim').val());
+                oda_ismi=$('#Oda_giris_isim').val();
+                $('#oyun').hide();
+                $('#oyuncu').show();
+                
+            }
+            function OyunaGir(){
+                
+                $('#oyuncu').hide();
+                $('#bekleme').show();
+                OyuncuSayisi=$('#kacinci_oyuncu').val();
+                socket.emit('OyunaGiris',$('#Oda_giris_isim').val(),OyuncuSayisi);
+                
+            }
+
+            socket.on('OyunaBasla',function(){
+                $('#bekleme').hide();
+                oyunbasla();
+            });
+
+        </script>
+        <script type="text/javascript" src="js/oyun.js"></script>
+    </body>
+</html>

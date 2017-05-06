@@ -1,0 +1,22 @@
+body{
+    background-image: url('/assets/platform/BG/BG.png');
+}
+#KullaniciAdiBolge,#oyun,#oyuncu{
+    align-items: center;
+    width: 30%;
+    margin-top: 15%;
+}
+
+#bekleme{
+    margin-top: 20%;
+    color: white;
+    font-size: 30px;
+}
+.GirisButonu{
+    width: 50%;
+    
+}
+.usttenBosluk{
+    margin-top: 5%;
+    
+}

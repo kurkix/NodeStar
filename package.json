@@ -1,0 +1,32 @@
+{
+  "name": "NodeStar",
+  "version": "0.0.1",
+  "description": "html5 game with nodejs",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.2",
+    "bluebird": "^3.5.0",
+    "twit": "^2.2.5",
+    "twitreer": "^2.2.5",
+    "mongoose": "^4.9.7",
+    "socket.io": "^1.7.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "nodejs server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "NodeStar"
+  },
+  "keywords": [
+    "html",
+    "html5",
+    "nodejs",
+    "game",
+    "phaser"
+  ],
+  "author": "kurkix",
+  "license": "kurkix"
+}
