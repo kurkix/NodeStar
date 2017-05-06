@@ -16,4 +16,8 @@ run
 
 $ nodejs server.js (for windows -> node server.js)
 
+test 
+
+http://207.154.254.51:3000
+
 -------------------Kurkix----------------------------------
