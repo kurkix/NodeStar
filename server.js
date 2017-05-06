@@ -29,10 +29,10 @@ var schema = mongoose.Schema({
 var DB = mongoose.model('Skorlar', schema);
 
 var T = new Twit({
-  consumer_key:         'zkVTYP5ZCBN0eJQd3ENOG0Iey',
-  consumer_secret:      '2SyFuwY3TNy2CPzpz4wRypZx98GRvCg3NIT9muuIVLZkGJunhm',
-  access_token:         '859442163423350785-GucQxo0jkwNAhTDYlFnjLLfSjTfngX4',
-  access_token_secret:  'xnmE2umT3Fc0t6Ix3nkyJaUwRqMvc6X8JriRcpoXQMcyg',
+  consumer_key:         '',
+  consumer_secret:      '',
+  access_token:         '',
+  access_token_secret:  '',
   timeout_ms:           60*1000,
 });
 app.use(express.static(__dirname + '/public'));
